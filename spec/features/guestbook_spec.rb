@@ -10,8 +10,8 @@ feature 'visitor leaves a message' do
 
   def leave_message(name, message)
     visit root_path
-    fill_in 'Name', with: name
-    fill_in 'Message', with: message
-    click_button 'Leave Message'
+    fill_in 'entry[name]', with: name
+    fill_in 'entry[message]', with: message
+    click_button 'Add Entry'
   end
 end
