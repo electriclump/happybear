@@ -1,0 +1,16 @@
+require 'spec_helper'
+
+feature 'visitor leaves a message' do
+  scenario 'with valid name and message' do
+    leave_message 'dan', 'hey cool site'
+
+    expect(page).to have_content('hey cool site')
+  end
+
+  def leave_message(name, message)
+    visit guestbook_path
+    fill_in 'Name', with: name
+    fill_in 'Message', with: message
+    click_button 'Leave Message'
+  end
+end
