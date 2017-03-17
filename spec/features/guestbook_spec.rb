@@ -1,6 +1,7 @@
 require 'spec_helper'
 
 feature 'visitor leaves a message' do
+
   scenario 'with valid name and message' do
     leave_message 'dan', 'hey cool site'
 
@@ -8,7 +9,7 @@ feature 'visitor leaves a message' do
   end
 
   def leave_message(name, message)
-    visit guestbook_path
+    visit root_path
     fill_in 'Name', with: name
     fill_in 'Message', with: message
     click_button 'Leave Message'
