@@ -1,3 +1,5 @@
+require 'capybara/rspec'
+
 RSpec.configure do |config|
   config.expect_with :rspec do |expectations|
     expectations.include_chain_clauses_in_custom_matcher_descriptions = true
@@ -22,6 +24,8 @@ RSpec.configure do |config|
   config.profile_examples = 10
 
   config.order = :random
+
+  config.infer_spec_type_from_file_location!
 
   Kernel.srand config.seed
 end
