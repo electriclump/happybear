@@ -14,7 +14,14 @@ class EntriesController < ApplicationController
       flash[:error] = 'Error saving entry'
       render :index
     end
+  end
 
+  def destroy
+    @entry = Entry.find(params[:id])
+    @entry.destroy
+
+    flash[:success] = 'Message has been deleted'
+    redirect_to root_url
   end
 
   private
