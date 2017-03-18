@@ -1,17 +1,27 @@
 class EntriesController < ApplicationController
+  before_action :find_entries
+
+  def index
+    @entry = Entry.new
+  end
 
   def create
     @entry = Entry.new(entry_params)
     if @entry.save
-      flash[:notice] = 'Thank you for your message!'
+      flash[:success] = 'Thank you for your message!'
+      redirect_to root_url
     else
       flash[:error] = 'Error saving entry'
+      render :index
     end
 
-    redirect_to root_path
   end
 
   private
+
+  def find_entries
+    @entries ||= Entry.all
+  end
 
   def entry_params
     params.require(:entry).permit(:name, :message)

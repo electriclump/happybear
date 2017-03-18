@@ -1,9 +1,6 @@
 Rails.application.routes.draw do
 
-  get 'guestbook/index'
-
-  root to: 'guestbook#index'
-  resources :guestbook, only: [:index]
-  resources :entries, only: [:index, :new, :create]
+  root to: 'entries#index'
+  resources :entries, only: [:index, :create]
 
 end

@@ -14,12 +14,14 @@ feature 'visitor leaves a message' do
     leave_message '', 'hey cool site'
 
     expect(page).to have_content('Error saving entry')
+    expect(page).to have_content('Name is mandatory')
   end
 
   scenario 'with invalid message' do
     leave_message 'trevor', ''
 
     expect(page).to have_content('Error saving entry')
+    expect(page).to have_content('Message  is mandatory')
   end
 
   def leave_message(name, message)

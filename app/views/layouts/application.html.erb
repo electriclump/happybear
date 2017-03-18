@@ -11,10 +11,11 @@
   <body>
     <div class="container">
       <div class="section">
-        <% flash.each do |k, v| %>
-          <%= content_tag :div, v, class: "flash #{k}" %>
+        <% flash.each do |type, msg| %>
+          <%= content_tag :div, msg, class: "flash alert alert-#{type}" %>
         <% end %>
       </div>
+
       <div class="section">
         <%= yield %>
       </div>
