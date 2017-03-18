@@ -1,16 +1,24 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Guestbook</title>
     <%= csrf_meta_tags %>
+    <%= stylesheet_link_tag "application", :media => "all" %>
   </head>
-
   <body>
-    <% flash.each do |key, value| %>
-      <%= content_tag :div, value, class: "flash #{key}" %>
-    <% end %>
-
-    <%= yield %>
-
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-9">
+          <% flash.each do |k, v| %>
+            <%= content_tag :div, v, class: "flash #{k}" %>
+          <% end %>
+          <%= yield %>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
+
