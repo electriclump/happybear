@@ -10,13 +10,14 @@
   </head>
   <body>
     <div class="container">
-      <div class="row">
-        <div class="col-lg-9">
-          <% flash.each do |k, v| %>
-            <%= content_tag :div, v, class: "flash #{k}" %>
-          <% end %>
-          <%= yield %>
-        </div>
+      <div class="section">
+        <% flash.each do |type, msg| %>
+          <%= content_tag :div, msg, class: "flash alert alert-#{type}" %>
+        <% end %>
+      </div>
+
+      <div class="section">
+        <%= yield %>
       </div>
     </div>
   </body>

@@ -6,6 +6,7 @@ AllCops:
     - db/migrate/*
     - bin/*
     - spec/spec_helper.rb
+    - config/initializers/*
 
 Rails:
   Enabled: true

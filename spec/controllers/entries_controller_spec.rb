@@ -2,7 +2,16 @@ require 'rails_helper'
 
 RSpec.describe EntriesController, type: :controller do
 
-  let(:valid_params) { { entry: { name: 'Dave', message: 'really nice site' } } }
+  let(:valid_params) do
+    { entry: { name: 'Dave', message: 'really nice site' } }
+  end
+
+  describe 'GET #index' do
+    it 'returns http success' do
+      get :index
+      expect(response).to have_http_status(:success)
+    end
+  end
 
   describe 'POST #create' do
     it 'returns http redirect' do
