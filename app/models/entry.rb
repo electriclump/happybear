@@ -1,3 +1,4 @@
 class Entry < ApplicationRecord
-  validates_presence_of :name, :message
+  validates :name, presence: true
+  validates :message, presence: true
 end
