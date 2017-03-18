@@ -4,4 +4,8 @@
   <%= f.submit "Add Entry" %>
 
 <% end %>
+<% @entries.each do |entry| %>
+  <p><%= entry.name %></p>
+  <p><%= entry.message %></p>
+<% end %>
 

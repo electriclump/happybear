@@ -1,8 +1,13 @@
 class EntriesController < ApplicationController
 
-  def new
+  def create
+    @entry = Entry.create(entry_params)
+    redirect_to root_path
   end
 
-  def create
+  private
+
+  def entry_params
+    params.require(:entry).permit(:name, :message)
   end
 end

@@ -1,5 +1,6 @@
 class GuestbookController < ApplicationController
   def index
     @entry = Entry.new
-  end
+    @entries = Entry.all
+ end
 end
