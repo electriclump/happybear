@@ -3,10 +3,11 @@ require 'spec_helper'
 feature 'visitor leaves a message' do
 
   scenario 'with valid name and message' do
-    leave_message 'dan', 'hey cool site'
+    leave_message 'Dan', 'hey cool site'
 
     expect(page).to have_content('Thank you for your message')
     expect(page).to have_content('hey cool site')
+    expect(page).to have_content('Posted less than a minute ago by Dan')
   end
 
   scenario 'with invalid name' do
