@@ -14,6 +14,18 @@ RSpec.describe Entry, type: :model do
     expect(subject).to be_valid
   end
 
+  it 'is not valid with missing name' do
+    subject.message = 'Hello I like your guestbook'
+
+    expect(subject).to_not be_valid
+  end
+
+  it 'is not valid with missing message' do
+    subject.name = 'Dan'
+
+    expect(subject).to_not be_valid
+  end
+
   describe 'default scope' do
     let!(:entry1) { create(:entry, name: 'Doris', message: 'hey') }
     let!(:entry2) { create(:entry, name: 'Dave', message: 'yo') }

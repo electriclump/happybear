@@ -21,7 +21,15 @@ feature 'visitor leaves a message' do
     leave_message 'trevor', ''
 
     expect(page).to have_content('Error saving entry')
-    expect(page).to have_content('Message  is mandatory')
+    expect(page).to have_content('Message is mandatory')
+  end
+
+  scenario 'deleting a message' do
+    leave_message 'Dan', 'hey cool site'
+    click_link 'Delete'
+
+    expect(page).to have_content('Message has been deleted')
+    expect(page).to_not have_content('hey cool site')
   end
 
   def leave_message(name, message)
