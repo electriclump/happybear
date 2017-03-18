@@ -2,11 +2,12 @@ inherit_from: .rubocop_todo.yml
 
 AllCops:
   Exclude:
-    - db/schema.rb
-    - db/migrate/*
     - bin/*
-    - spec/spec_helper.rb
     - config/initializers/*
+    - db/migrate/*
+    - db/schema.rb
+    - db/seeds.rb
+    - spec/spec_helper.rb
 
 Rails:
   Enabled: true
@@ -28,7 +29,7 @@ Style/EmptyLinesAroundClassBody:
 
 Style/EmptyLinesAroundMethodBody:
   Enabled: false
-Style/BlockLength:
+Metrics/BlockLength:
     Exclude:
       - 'Rakefile'
       - '**/*.rake'

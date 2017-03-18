@@ -115,14 +115,16 @@ img {
 button,
 input,
 select,
-textarea {
+textarea,
+textarea.form-control{
   margin: 0;
   font-size: 100%;
   vertical-align: middle;
+  width: 100%;
 }
 
 button,
-input {
+input{
   *overflow: visible;
   line-height: normal;
 }
@@ -1075,6 +1077,7 @@ label {
 
 select,
 textarea,
+.form-control
 input[type="text"],
 input[type="password"],
 input[type="datetime"],
@@ -1106,7 +1109,7 @@ input[type="color"],
 input,
 textarea,
 .uneditable-input {
-  width: 206px;
+  width: 100%;
 }
 
 textarea {
@@ -1114,6 +1117,7 @@ textarea {
 }
 
 textarea,
+.form-control,
 input[type="text"],
 input[type="password"],
 input[type="datetime"],
@@ -1653,6 +1657,7 @@ select:focus:invalid:focus {
 
 .help-block {
   display: block;
+  margin-top: 0px;
   margin-bottom: 10px;
 }
 
@@ -1714,7 +1719,7 @@ select:focus:invalid:focus {
 .input-prepend .add-on {
   display: inline-block;
   width: auto;
-  height: 20px;
+  height: 40px;
   min-width: 16px;
   padding: 4px 5px;
   font-size: 16px;
@@ -6109,7 +6114,7 @@ a.badge:focus {
 }
 
 .hero-unit {
-  padding: 60px;
+  padding: 60px !important;
   margin-bottom: 30px;
   font-size: 18px;
   font-weight: 200;
@@ -6433,3 +6438,11 @@ legend {
   position: fixed;
 }
 
+.flash {
+  margin: 10px 0;
+}
+
+footer {
+  padding: 40px 0 0;
+  text-align: center;
+}

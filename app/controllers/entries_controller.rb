@@ -17,10 +17,12 @@ class EntriesController < ApplicationController
   end
 
   def destroy
-    @entry = Entry.find(params[:id])
-    @entry.destroy
+    if Entry.find(params[:id]).destroy
+      flash[:success] = 'Entry has been deleted'
+    else
+      flash[:error] = "Couldn't delete entry"
+    end
 
-    flash[:success] = 'Message has been deleted'
     redirect_to root_url
   end
 
