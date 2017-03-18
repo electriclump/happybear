@@ -5,6 +5,7 @@ AllCops:
     - db/schema.rb
     - db/migrate/*
     - bin/*
+    - spec/spec_helper.rb
 
 Rails:
   Enabled: true
